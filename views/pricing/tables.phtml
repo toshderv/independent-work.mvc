@@ -1,0 +1,84 @@
+<!-- Page Title -->
+<div class="page-title-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 wow fadeIn">
+        <i class="fa fa-dollar"></i>
+        <h1>Pricing Tables /</h1>
+        <p>Some pricing tables for your products or services</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing 1 -->
+<div class="pricing-1-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 pricing-1-title wow fadeIn">
+        <h2>Pricing 1</h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <?foreach ($this->sectionOne as $key => $value) {?>
+        <div class="col-sm-4 pricing-1-box<?= $key == 1 ? ' pricing-1-box-best' : ''?> wow <?= $key == 1 ? 'fadeInDown' : 'fadeInUp'?>">
+          <div class="pricing-1-box-inner">
+            <div class="pricing-1-box-price">
+              <span>$ </span><strong><?= $value['price']?></strong><span> / month</span>
+            </div>
+            <h3><?= $value['rate']?></h3>
+            <h4><?= $value['category']?></h4>
+            <div class="pricing-1-box-features">
+              <ul>
+                <?foreach (unserialize($value['features']) as $value) {?>
+                  <li><?= $value?></li>
+                <?}?>
+              </ul>
+            </div>
+            <div class="pricing-1-box-sign-up">
+              <a class="big-link-3" href="#">Buy now</a>
+            </div>
+          </div>
+        </div>
+      <?}?>
+
+    </div>
+  </div>
+</div>
+
+<!-- Pricing 2 -->
+<div class="pricing-2-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 pricing-1-title wow fadeIn">
+        <h2>Pricing 2</h2>
+      </div>
+    </div>
+    <div class="row">
+    
+      <?foreach ($this->sectionTwo as $key => $value) {?>
+        <div class="col-sm-3 pricing-1-box<?= $key == 1 ? ' pricing-1-box-best' : ''?> wow <?= $key == 1 ? 'fadeInDown' : 'fadeInUp'?>">
+          <div class="pricing-1-box-inner">
+            <div class="pricing-1-box-price">
+              <span>$ </span><strong><?= $value['price']?></strong><span> / month</span>
+            </div>
+            <h3><?= $value['rate']?></h3>
+            <h4><?= $value['category']?></h4>
+            <div class="pricing-1-box-features">
+              <ul>
+              <?foreach (unserialize($value['features']) as $value) {?>
+                  <li><?= $value?></li>
+                <?}?>
+              </ul>
+            </div>
+            <div class="pricing-1-box-sign-up">
+              <a class="big-link-3" href="#">Sign up</a>
+            </div>
+          </div>
+        </div>
+      <?}?>
+
+    </div>
+  </div>
+</div>
